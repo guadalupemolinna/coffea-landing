@@ -1,0 +1,129 @@
+/* =========================================================
+   product-card — PRD §5.4 / 5.5 (R2, R4, R5, R6) y §8
+   Medidas Figma a 1920 px: card 366 × 570, gap 4, padding 16
+   ========================================================= */
+
+/* Base (360 px): 1,2 cards visibles, la siguiente se asoma (PRD §7) */
+.product-card {
+  display: flex;
+  flex: 0 0 calc((100% - var(--space-4) * 0.2) / 1.2);
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  background-color: var(--color-sand-20);
+  border: var(--border-card) solid var(--color-sand);
+  border-radius: var(--radius-card);
+  scroll-snap-align: start;
+  transition: box-shadow var(--duration) ease;
+}
+
+/* md (768 px): 2,5 cards visibles */
+@media (min-width: 48rem) {
+  .product-card {
+    flex-basis: calc((100% - var(--space-4) * 1.5) / 2.5);
+  }
+}
+
+/* lg / xl (1024 px+): 4 cards visibles → 366 px a 1920 con carrusel de 1476 px */
+@media (min-width: 64rem) {
+  .product-card {
+    flex-basis: calc((100% - var(--space-4) * 3) / 4);
+    min-height: var(--h-card, 35.625rem); /* 570 px */
+  }
+}
+
+/* ---------- Imagen + favorito (R5) ---------- */
+.product-card__img-wrapper {
+  position: relative;
+  overflow: hidden; /* el zoom no se sale del borde */
+  border-radius: var(--radius-img);
+}
+
+.product-card__img-wrapper img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 334 / 364;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+/* Corazón de 33 px a 18 px de los bordes, con área táctil de 44 px */
+.product-card__fav-label {
+  position: absolute;
+  top: calc(var(--inset-heart, 1.125rem) - (var(--size-touch) - var(--size-heart, 2.0625rem)) / 2);
+  right: calc(var(--inset-heart, 1.125rem) - (var(--size-touch) - var(--size-heart, 2.0625rem)) / 2);
+  width: var(--size-touch);
+  height: var(--size-touch);
+  background: url("../../assets/icons/heart.svg") center / var(--size-heart, 2.0625rem) no-repeat;
+  cursor: pointer;
+}
+
+.product-card__fav-input:checked + .product-card__fav-label {
+  background-image: url("../../assets/icons/heart-filled.svg");
+}
+
+.product-card__fav-input:focus-visible + .product-card__fav-label {
+  border-radius: 50%;
+  outline: 2px solid var(--color-espresso);
+  outline-offset: 2px;
+}
+
+/* ---------- Texto (R6) ---------- */
+.product-card__title {
+  font-family: var(--font-body);
+  font-size: var(--fs-card-title);   /* 38 px */
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--color-espresso);
+}
+
+.product-card__desc {
+  flex-grow: 1; /* empuja la fila de precio al fondo */
+  font-family: var(--font-body);
+  font-size: var(--fs-lg);           /* 20 px */
+  font-weight: 400;
+  line-height: var(--lh-card);       /* 28 px */
+  color: var(--color-maroon);
+}
+
+/* ---------- Precio + botón (R6) ---------- */
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  margin-top: auto;
+}
+
+.product-card__price {
+  font-family: var(--font-ui);
+  font-size: var(--fs-lg);           /* 20 px */
+  font-weight: 600;
+  color: var(--color-maroon);
+}
+
+.product-card__btn {
+  min-height: var(--size-touch);
+  padding: var(--btn-pad-y, 0.625rem) var(--btn-pad-x, 1.625rem); /* 10 × 26 px */
+  border: 0;
+  border-radius: var(--radius-btn);
+  background-color: var(--color-maroon);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);           /* 14 px */
+  font-weight: 500;
+  color: var(--color-white);
+  transition: transform var(--duration) ease, background-color var(--duration) ease;
+}
+
+/* ---------- Hover: solo dispositivos con mouse (§8) ---------- */
+@media (hover: hover) {
+  .product-card:hover {
+    box-shadow: var(--shadow-card);
+  }
+  .product-card:hover .product-card__img-wrapper img {
+    transform: scale(1.03);
+  }
+  .product-card__btn:hover {
+    transform: translateY(-2px);
+  }
+}

@@ -1,0 +1,130 @@
+/* =========================================================
+   tokens.css — Design tokens de Coffea (PRD sección 4)
+   Única fuente de colores, tipografías, radios y espaciados.
+   Valores extraídos del Figma a 1920 px.
+   ========================================================= */
+
+:root {
+  /* ---------- Colores ---------- */
+  --color-espresso: #30261c;                 /* footer, botones primarios, títulos, texto principal */
+  --color-maroon: #2a0000;                   /* botón de card, precio, descripción de card */
+  --color-sand: #e2d9c8;                     /* franjas, CTA, newsletter, borde de cards */
+  --color-sand-20: rgba(226, 217, 200, 0.2); /* fondo de product-card */
+  --color-sand-40: rgba(226, 217, 200, 0.4); /* fondo de testimonial-card */
+  --color-bg: #f1f0ee;                       /* fondo de página, input del newsletter */
+  --color-muted: #544a3e;                    /* etiquetas de categorías */
+  --color-border-soft: rgba(48, 38, 28, 0.1);/* borde de testimonial-card */
+  --color-text-soft: rgba(48, 38, 28, 0.7);  /* rol del cliente */
+  --color-white: #ffffff;                    /* texto del hero, nav, footer */
+  --color-star: #f5b301;                     /* rating (verificar contra el SVG de estrellas 0:200) */
+
+  /* Auxiliares (no vienen del Figma, necesarios para estados y legibilidad) */
+  --color-ink: #000000;                      /* título del CTA */
+  --color-error: #b3261e;                    /* :user-invalid del newsletter */
+  --color-overlay: rgba(0, 0, 0, 0.55);      /* overlay del hero para contraste AA */
+  --focus-color: var(--color-espresso);      /* se redefine a blanco en fondos oscuros */
+
+  /* ---------- Tipografías (Google Fonts, display=swap) ---------- */
+  --font-display: "Playfair Display", Georgia, serif;   /* 500, 600, 700 */
+  --font-body: "Outfit", system-ui, sans-serif;         /* 400, 500, 600 */
+  --font-ui: "Poppins", system-ui, sans-serif;          /* 400, 500, 600 */
+  --font-accent: "Reggae One", Georgia, serif;          /* 400 — solo "Come and Join" */
+
+  /* ---------- Escala tipográfica (valor máximo = Figma a 1920 px) ---------- */
+  --fs-hero: clamp(2.5rem, 1.5rem + 3.5vw, 4.5rem);        /* 72 px, bold */
+  --fs-h2: clamp(1.5rem, 1.2rem + 1vw, 2rem);              /* 32 px, semibold */
+  --fs-cta: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem);        /* 40 px, semibold */
+  --fs-card-title: clamp(1.375rem, 0.5rem + 1.6vw, 2.375rem); /* 38 px, semibold */
+  --fs-logo: 2rem;                                         /* 32 px, bold */
+  --fs-footer-h: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);    /* 24 px, medium */
+  --fs-lg: 1.25rem;                                        /* 20 px */
+  --fs-md: 1.125rem;                                       /* 18 px */
+  --fs-base: 1rem;                                         /* 16 px */
+  --fs-sm: 0.875rem;                                       /* 14 px */
+  --fs-xs: 0.75rem;                                        /* 12 px */
+
+  /* Interlineados */
+  --lh-tight: 1.14;     /* hero 72/82 */
+  --lh-cta: 1.25;       /* CTA 40/50 */
+  --lh-body: 1.45;      /* hero 18/26 */
+  --lh-card: 1.4;       /* descripción de card 20/28 */
+  --lh-xs: 1.667;       /* testimonio 12/20 */
+
+  /* Tracking */
+  --tracking-h2: 0.04em;       /* 1.28 px sobre 32 px */
+  --tracking-eyebrow: 0.2em;   /* 4 px sobre 20 px */
+
+  /* ---------- Forma ---------- */
+  --radius-pill: 100px;   /* botones hero, CTA, newsletter, buscador */
+  --radius-card: 18px;    /* product-card, testimonial-card */
+  --radius-img: 12px;     /* imagen de card */
+  --radius-btn: 8px;      /* botón "Order Now" de card */
+
+  --border-card: 1.5px;
+  --border-testimonial: 2px;
+  --border-input: 2px;
+
+  --shadow-card: 0 8px 24px rgba(48, 38, 28, 0.12);
+
+  /* ---------- Espaciado (escala 4 · 8 · 12 · 16 · 24 · 28 · 40 · 56) ---------- */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-28: 1.75rem;
+  --space-40: 2.5rem;
+  --space-56: 3.5rem;
+  --space-64: 4rem;     /* título → carrusel */
+  --space-80: 5rem;     /* arrow → card */
+
+  /* ---------- Contenedores y layout ---------- */
+  --container: 90.25rem;            /* 1444 px */
+  --container-carousel: 92.25rem;   /* 1476 px */
+  --gutter: 1rem;                   /* base: 16 px */
+  --header-top: 1.5rem;             /* mobile; 55 px en desktop */
+
+  /* ---------- Tamaños de componentes ---------- */
+  --size-touch: 2.75rem;            /* 44 px, área táctil mínima */
+  --size-search: 2.75rem;           /* buscador: 44 px mobile, 61 px desktop */
+  --size-arrow: 3.5rem;             /* flecha de carrusel: 71 px en xl */
+  --size-icon-cat: 5.125rem;        /* 82 px */
+  --size-heart: 2.0625rem;          /* 33 px */
+  --inset-heart: 1.125rem;          /* 18 px */
+  --btn-pad-y: 0.625rem;            /* 10 px */
+  --btn-pad-x: 1.625rem;            /* 26 px */
+  --hero-content-top: 18.375rem;    /* 294 px: inicio del texto del hero a 1920 px */
+  --hero-top-fluid: 15.3125vw;      /* 294 / 1920, escala el inicio del texto */
+  --hero-top-min: 7rem;             /* 112 px, mínimo en pantallas chicas */
+  --h-card: 35.625rem;              /* 570 px */
+  --h-newsletter: 20rem;            /* 320 px */
+  --w-input: 22.75rem;              /* 364 px */
+
+  /* ---------- Movimiento ---------- */
+  --duration: 200ms;
+}
+
+/* ---------- Breakpoints mobile-first (PRD sección 7) ---------- */
+
+/* md ≥ 768 px */
+@media (min-width: 48rem) {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+/* lg ≥ 1024 px */
+@media (min-width: 64rem) {
+  :root {
+    --gutter: 3rem;
+    --size-search: 3.8125rem;   /* 61 px */
+    --header-top: 3.4375rem;    /* 55 px */
+  }
+}
+
+/* xl ≥ 1440 px */
+@media (min-width: 90rem) {
+  :root {
+    --size-arrow: 4.4375rem;    /* 71 px */
+  }
+}

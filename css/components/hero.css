@@ -1,0 +1,110 @@
+/* =========================================================
+   hero — PRD §5.2
+   Figma a 1920 px: alto 1000, bloque de texto de 557 px a 238 px
+   del borde izquierdo y 294 px del superior.
+   ========================================================= */
+
+.hero {
+  --focus-color: var(--color-white);
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 40rem;
+  padding-block: 6rem var(--space-56);
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-overlay);
+}
+
+/* Contenedor sin min(): el validador W3C no lo entiende con var() */
+.hero__container {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.hero__content { max-width: 34.8125rem; } /* 557 px */
+
+.hero__eyebrow {
+  margin-bottom: var(--space-24);
+  font-family: var(--font-body);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+.hero__title {
+  margin-bottom: var(--space-24);
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  text-wrap: wrap; /* sin balance: respeta los cortes de línea del Figma */
+}
+
+.hero__text {
+  max-width: 26.9375rem; /* 431 px */
+  margin-bottom: var(--space-28);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+/* Botón "Order Now" (PRD §5.2 R4): blanco, pill, 16 × 40 px, Outfit 500 18 px */
+.hero__btn {
+  display: inline-block;
+  padding: var(--space-16) var(--space-40);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--color-espresso);
+  text-decoration: none;
+  transition: transform var(--duration) ease;
+}
+@media (hover: hover) {
+  .hero__btn:hover { transform: translateY(-2px); }
+}
+
+@media (min-width: 48rem) {
+  .hero__eyebrow,
+  .hero__title,
+  .hero__text { margin-bottom: var(--space-40); }
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    min-height: min(100vh, 62.5rem);
+    align-items: flex-start; /* el texto arranca desde arriba, no centrado */
+    /* 294 px a 1920 px de ancho, proporcional en pantallas más chicas */
+    padding-top: clamp(var(--hero-top-min), var(--hero-top-fluid), var(--hero-content-top));
+  }
+  .hero::after { background: linear-gradient(90deg, var(--color-overlay), transparent 75%); }
+  .hero__title,
+  .hero__text { margin-bottom: var(--space-56); }
+}
+
+/* Variante sin imagen (404) */
+.hero--plain { min-height: 70vh; background: var(--color-espresso); }
+.hero--plain::after { display: none; }

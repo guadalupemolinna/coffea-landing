@@ -1,0 +1,77 @@
+/* =========================================
+   1. BASE MOBILE (360px+) - Grilla 2x2
+   ========================================= */
+.categories {
+  background-color: var(--color-sand);
+  padding-block: 2.5rem; /* 40px */
+}
+
+.categories__container {
+  width: 100%;
+  max-width: var(--container, 90.25rem); /* 1444px */
+  margin-inline: auto;
+  padding-inline: 1.5rem; /* 24px */
+}
+
+.categories__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem; /* 32px vertical, 16px horizontal */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada ítem individual (el <a>) */
+.categories__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  gap: 0.75rem; /* 12px */
+}
+
+.categories__item img {
+  width: 5.125rem; /* 82px */
+  height: 5.125rem; /* 82px */
+  object-fit: contain;
+}
+
+.categories__label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* =========================================
+   2. TABLET (768px+) - 4 en fila
+   ========================================= */
+@media (min-width: 48rem) { /* 768px / 16 */
+  .categories__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* =========================================
+   3. DESKTOP (1024px+) - Alineación final
+   ========================================= */
+@media (min-width: 64rem) { /* 1024px / 16 */
+  .categories {
+    height: 13.75rem; /* 220px */
+    padding-block: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .categories__list {
+    max-width: 52.8125rem; /* 845px */
+    margin-inline: auto;
+  }
+}
+@media (hover: hover) {
+  .categories__item:hover .categories__label { color: var(--color-espresso); }
+}

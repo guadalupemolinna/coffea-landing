@@ -1,0 +1,66 @@
+.testimonials { padding-block: var(--space-40) var(--space-56); background: var(--color-bg); }
+.testimonials__container { text-align: center; }
+.testimonials__eyebrow {
+  font-family: var(--font-accent);
+  font-size: var(--fs-h2);
+  font-weight: 400;
+}
+.testimonials__title { margin-bottom: var(--space-40); }
+
+.testimonial-card {
+  display: flex;
+  flex: 0 0 85%;
+  flex-direction: column;
+  gap: var(--space-16);
+  min-width: 0;
+  padding: var(--space-28);
+  background: var(--color-sand-40);
+  border: var(--border-testimonial) solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  text-align: left;
+  scroll-snap-align: center;
+}
+.testimonial-card__author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+  order: -1;
+}
+.testimonial-card__avatar { width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; }
+.testimonial-card__name { font-size: var(--fs-md); font-weight: 600; }
+.testimonial-card__role { color: var(--color-text-soft); font-size: var(--fs-sm); }
+.testimonial-card__rating {
+  width: 8.5rem;
+  height: 1.5rem;
+  margin-inline-start: auto;
+  background: url("../../assets/icons/star.svg") left center / auto 100% repeat-x;
+}
+.testimonial-card__rating--4 { width: 6.8rem; }
+.testimonial-card__text { font-size: var(--fs-xs); font-weight: 500; line-height: var(--lh-xs); }
+
+.testimonials__pager { display: flex; justify-content: center; margin-top: var(--space-16); }
+.testimonials__dot {
+  display: grid;
+  place-items: center;
+  width: var(--size-touch);
+  height: var(--size-touch);
+}
+.testimonials__dot::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--color-muted);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity var(--duration) ease;
+}
+.testimonials__dot:hover::before,
+.testimonials__dot:focus-visible::before { opacity: 1; }
+
+@media (min-width: 48rem) { .testimonial-card { flex-basis: 45%; } }
+@media (min-width: 64rem) {
+  .testimonials .carousel__track { align-items: center; justify-content: center; gap: var(--space-24); overflow-x: visible; }
+  .testimonial-card { flex: 1 1 0; max-width: 26.0625rem; min-height: 12.9375rem; }
+  .testimonial-card--featured { max-width: 27.5625rem; min-height: 14.6875rem; }
+}

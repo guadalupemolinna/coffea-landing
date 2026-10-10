@@ -1,0 +1,134 @@
+.newsletter {
+  position: relative;
+  min-height: var(--h-newsletter);
+  background-color: var(--color-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.newsletter__img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: auto;
+  display: none;
+  pointer-events: none;
+}
+
+.newsletter__img--left {
+  left: 0;
+}
+
+.newsletter__img--right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.newsletter__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-inline: var(--space-16);
+  text-align: center;
+}
+
+.newsletter__title {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  color: var(--color-espresso);
+}
+
+.newsletter__desc {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  color: var(--color-espresso);
+  margin-bottom: var(--space-24);
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+  max-width: var(--w-input);
+  margin-inline: auto;
+}
+
+.newsletter__input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter__icon {
+  position: absolute;
+  left: var(--space-16);
+  pointer-events: none;
+}
+
+.newsletter__input {
+  width: 100%;
+  height: var(--size-touch);
+  padding-left: var(--space-40); /* Espacio para el ícono */
+  padding-right: var(--space-16);
+  border: var(--border-input) solid transparent;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg);
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  color: var(--color-espresso);
+}
+
+.newsletter__input:user-invalid {
+  border-color: var(--color-error);
+}
+
+.newsletter__submit {
+  width: 100%;
+  height: var(--size-touch);
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-espresso);
+  color: var(--color-bg);
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  font-weight: 500;
+}
+
+@media (hover: hover) {
+  .newsletter__submit:hover {
+    transform: translateY(-2px);
+    transition: transform var(--duration) ease, background-color var(--duration) ease;
+  }
+}
+
+/* Breakpoint MD: Tablet (Formulario en línea) */
+@media (min-width: 48rem) {
+  .newsletter__form {
+    flex-direction: row;
+    max-width: none;
+    justify-content: center;
+  }
+
+  .newsletter__input {
+    width: var(--w-input);
+  }
+
+  .newsletter__submit {
+    width: auto;
+    padding-inline: var(--space-24);
+  }
+}
+
+/* Breakpoint LG: Desktop (Granos visibles) */
+@media (min-width: 64rem) {
+  .newsletter__img {
+    display: block;
+  }
+}

@@ -1,0 +1,95 @@
+/* =========================================================
+   promo (CTA granos de café) — PRD §5.6 y §7
+   base  : imágenes ocultas, texto y botón centrados
+   md    : imagen izquierda reducida (sangra fuera del borde)
+   xl    : diseño original con las dos imágenes
+   ========================================================= */
+
+.promo {
+  --promo-hand-w: 32.5rem;      /* 520 px, ancho de la imagen */
+  --promo-hand-bleed: 12rem;    /* parte de la imagen que queda fuera de pantalla en tablet */
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 20.9375rem;       /* 335 px */
+  padding-block: var(--space-56);
+  overflow: hidden;
+  background: var(--color-sand);
+}
+
+/* El <picture> no genera caja: así no crea filas extra en el grid */
+.promo > picture { display: contents; }
+
+.promo__container {
+  position: relative;
+  z-index: 1;
+  padding-inline: var(--gutter);
+}
+.promo__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  text-align: center;
+}
+.promo__title {
+  max-width: 23.25rem;          /* 372 px */
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--fs-cta);
+  font-weight: 600;
+  line-height: var(--lh-cta);
+}
+
+.promo__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  min-width: var(--w-btn-cta, 16.125rem);   /* 258 px */
+  min-height: var(--h-btn-cta, 3.1875rem);  /* 51 px */
+  padding: var(--space-12) var(--space-24);
+  border-radius: var(--radius-pill);
+  background: var(--color-espresso);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--color-bg);
+  text-decoration: none;
+  transition: transform var(--duration) ease;
+}
+.promo__btn img { width: 1.25rem; height: 1.25rem; }
+@media (hover: hover) {
+  .promo__btn:hover { transform: translateY(-2px); }
+}
+
+/* Imágenes decorativas: siempre a la altura completa de la franja,
+   así el borde recto superior de la mano queda pegado al borde de la sección */
+.promo__img {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  max-width: none;
+  height: 100%;
+}
+.promo__img--left  { left: 0; }
+.promo__img--right { right: 0; }
+
+/* md (≥ 768 px): imagen izquierda reducida, sangrando fuera del borde izquierdo */
+@media (min-width: 48rem) {
+  .promo__img--left {
+    display: block;
+    left: calc(-1 * var(--promo-hand-bleed));
+  }
+  .promo__container {
+    padding-inline-start: calc(var(--promo-hand-w) - var(--promo-hand-bleed) + var(--gutter));
+  }
+}
+
+/* xl (≥ 1600 px): diseño original, las dos imágenes completas */
+@media (min-width: 100rem) {
+  .promo__img--left  { left: 0; }
+  .promo__img--right { display: block; }
+  .promo__container  { padding-inline: var(--gutter); }
+}
