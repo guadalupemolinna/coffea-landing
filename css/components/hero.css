@@ -1,9 +1,3 @@
-/* =========================================================
-   hero — PRD §5.2
-   Figma a 1920 px: alto 1000, bloque de texto de 557 px a 238 px
-   del borde izquierdo y 294 px del superior.
-   ========================================================= */
-
 .hero {
   --focus-color: var(--color-white);
   position: relative;
@@ -101,14 +95,20 @@
     display: block;
     height: var(--h-hero); /* 1000 px exactos según PRD a 1920 px */
     min-height: var(--h-hero);
-    padding-top: 14.875rem; /* 238 px: Eyebrow a 238 px, H1 a 294 px exactos */
+    padding-top: 14.875rem; 
     padding-bottom: 0;
     box-sizing: border-box;
   }
+  
+  .hero__container {
+    max-width: var(--container);
+    padding-inline-start: 14.875rem; /* Forzamos los 238px de margen izquierdo */
+  }
+
   .hero::after { background: linear-gradient(90deg, var(--color-overlay), transparent 75%); }
-  .hero__eyebrow { margin-bottom: 2.25rem; } /* 36 px: Eyebrow en 238 px -> H1 en 294 px exactos */
-  .hero__title { margin-bottom: var(--space-56); } /* 56 px según PRD §5.2 R3 */
-  .hero__text { margin-bottom: var(--space-56); }  /* 56 px según PRD §5.2 R3 */
+  .hero__eyebrow { margin-bottom: 2.25rem; } 
+  .hero__title { margin-bottom: var(--space-56); } 
+  .hero__text { margin-bottom: var(--space-56); }  
 }
 
 /* Variante sin imagen (404) */
