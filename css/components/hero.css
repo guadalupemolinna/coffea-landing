@@ -89,23 +89,32 @@
   .hero__title { margin-bottom: var(--space-24); }
   .hero__text { margin-bottom: var(--space-40); }
 }
-
 @media (min-width: 64rem) {
   .hero {
+    position: relative;
     display: block;
     height: var(--h-hero); /* 1000 px exactos según PRD a 1920 px */
     min-height: var(--h-hero);
-    padding-top: 14.875rem; 
+    padding-top: 0;
     padding-bottom: 0;
     box-sizing: border-box;
   }
   
-  /* Anulamos el contenedor global y posicionamos el contenido mediante grid o padding absoluto limpio */
+  /* Dejamos el contenedor fluido normal para no romper nada más */
   .hero__container {
     width: 100%;
-    max-width: none;
-    padding-inline: 14.875rem 0; /* Forzamos exactamente 238px de margen izquierdo desde el borde de la pantalla */
-    margin-inline: 0;
+    max-width: calc(var(--container) + 2 * var(--gutter));
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* Posicionamos el bloque de texto de forma absoluta exactamente a 238px del borde izquierdo y 294px del superior */
+  .hero__content {
+    position: absolute;
+    top: 18.375rem; /* 294 px exactos */
+    left: 14.875rem; /* 238 px exactos desde el borde izquierdo */
+    max-width: 34.8125rem;
+    margin: 0;
   }
 
   .hero::after { background: linear-gradient(90deg, var(--color-overlay), transparent 75%); }
@@ -113,7 +122,6 @@
   .hero__title { margin-bottom: var(--space-56); } 
   .hero__text { margin-bottom: var(--space-56); }  
 }
-
 /* Variante sin imagen (404) */
 .hero--plain { min-height: 70vh; background: var(--color-espresso); }
 .hero--plain::after { display: none; }
