@@ -1,19 +1,21 @@
 .newsletter {
   position: relative;
-  min-height: var(--h-newsletter);
   background-color: var(--color-sand);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-block: var(--space-40);
+  padding-inline: var(--gutter);
 }
-
 .newsletter__img {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   height: 100%;
   width: auto;
+  max-width: 25rem; /* Limita el ancho máximo para que no invadan el centro */
+  object-fit: cover;  /* Asegura que la imagen recorte prolijamente si es necesario */
   display: none;
   pointer-events: none;
 }
@@ -24,15 +26,19 @@
 
 .newsletter__img--right {
   right: 0;
-  transform: translateY(-50%) scaleX(-1);
+  transform: scaleX(-1); /* Espejado limpio sin perder el centrado vertical */
 }
 
 .newsletter__container {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-inline: var(--space-16);
+  max-width: 45rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
 }
 
 .newsletter__title {
@@ -48,7 +54,7 @@
   font-weight: 500;
   font-size: var(--fs-base);
   color: var(--color-espresso);
-  margin-bottom: var(--space-24);
+  margin-bottom: var(--space-12);
 }
 
 .newsletter__form {
@@ -64,6 +70,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .newsletter__icon {
@@ -75,7 +82,7 @@
 .newsletter__input {
   width: 100%;
   height: var(--size-touch);
-  padding-left: var(--space-40); /* Espacio para el ícono */
+  padding-left: var(--space-40);
   padding-right: var(--space-16);
   border: var(--border-input) solid transparent;
   border-radius: var(--radius-pill);
@@ -99,6 +106,7 @@
   font-family: var(--font-ui);
   font-size: var(--fs-base);
   font-weight: 500;
+  cursor: pointer;
 }
 
 @media (hover: hover) {
@@ -119,8 +127,8 @@
   }
 
   .newsletter__input-group {
-    width: var(--w-input); /* 364 px */
-    height: var(--size-touch); /* 44 px */
+    width: var(--w-input);
+    height: var(--size-touch);
   }
 
   .newsletter__input {
@@ -131,17 +139,18 @@
 
   .newsletter__submit {
     width: auto;
-    height: var(--size-touch); /* 44 px */
+    height: var(--size-touch);
     padding-inline: var(--space-28);
     box-sizing: border-box;
   }
 }
 
-/* Breakpoint LG: Desktop (Franja de 320 px y granos visibles) */
-@media (min-width: 64rem) {
+/* Breakpoint XL (≥ 90rem / 1440px): Franja de 320 px exactos y granos visibles según PRD */
+@media (min-width: 90rem) {
   .newsletter {
-    height: var(--h-newsletter); /* 320 px exactos según PRD */
+    height: var(--h-newsletter); /* 320 px exactos */
     min-height: var(--h-newsletter);
+    padding-block: 0;
   }
 
   .newsletter__img {
