@@ -1,19 +1,14 @@
-/* =========================================================
-   product-card — PRD §5.4 / 5.5 (R2, R4, R5, R6) y §8
-   Medidas Figma a 1920 px: card 366 × 570, gap 4, padding 16
-   ========================================================= */
-
-/* Base (360 px): 1,2 cards visibles, la siguiente se asoma (PRD §7) */
 .product-card {
   display: flex;
+  flex: 0 0 calc((100% - var(--space-4) * 0.2) / 1.2);
   flex-direction: column;
-  padding: var(--space-16);
   gap: var(--space-16);
+  padding: var(--space-16);
   background-color: var(--color-sand-20);
   border: var(--border-card) solid var(--color-sand);
   border-radius: var(--radius-card);
-  box-sizing: border-box;
   scroll-snap-align: start;
+  transition: box-shadow var(--duration) ease;
 }
 
 /* md (768 px): 2,5 cards visibles */
