@@ -92,19 +92,18 @@
 @media (min-width: 64rem) {
   .hero {
     display: block;
-    height: var(--h-hero); /* 1000 px exactos según PRD a 1920 px */
+    height: var(--h-hero);
     min-height: var(--h-hero);
     padding-top: var(--hero-offset-left); 
     padding-bottom: 0;
     box-sizing: border-box;
   }
   
-  /* Alineamos el contenedor respetando la grilla y usando la variable oficial */
   .hero__container {
     width: 100%;
-    max-width: calc(var(--container) + 2 * var(--gutter));
-    margin-inline: auto;
-    padding-inline-start: var(--hero-offset-left); /* Cero valores sueltos, todo por token */
+    max-width: 100%; /* Forzamos a que ocupe todo el ancho para mandar el texto donde queremos */
+    margin-inline: 0;
+    padding-inline-start: var(--hero-offset-left); /* Los 238px exactos desde el borde absoluto de la pantalla */
   }
 
   .hero__content {
