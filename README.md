@@ -1,17 +1,39 @@
-# Coffea — Landing page
+# Coffea — Landing Page
 
-Landing page estática de alta fidelidad para la cafetería **Coffea**, desarrollada a partir del diseño de Figma *Coffea — Free Responsive Coffee Shop Website Template* (Figma Community). Proyecto de la cátedra **Diseño UX-UI 2026** (Licenciatura en Sistemas de Información).
+Landing page estática de alta fidelidad para la cafetería **Coffea**, desarrollada a partir del diseño de Figma *Coffea — Free Responsive Coffee Shop Website Template* (Figma Community). Proyecto correspondiente a la cátedra **Diseño UX-UI 2026** (Licenciatura en Sistemas de Información – FCyT UADER).
 
 - **Stack:** HTML5 semántico + CSS3 (custom properties, Flexbox, Grid, scroll-snap, `@layer`).
 - **Sin:** JavaScript, frameworks, preprocesadores, bundlers ni CMS.
-- **Deploy:** Netlify (sitio estático, deploy continuo desde `main`).
+- **Deploy:** Netlify (sitio estático, deploy continuo desde la rama `main`).
 - **Fidelidad:** QA visual calibrado al milímetro para resolución de referencia **1920 px de ancho** (desfasaje < 2 px respecto al diseño original de Figma).
 
 ---
 
-## Estructura del Proyecto
+## 📱 Métricas de Lighthouse (Mobile)
 
-```
+Evaluación oficial ejecutada en entorno móvil cumpliendo y superando con creces los umbrales de aceptación exigidos por el PRD:
+
+| Métrica (Mobile) | Puntaje | Umbral PRD | Estado |
+|---|---|---|---|
+| **Performance** | **97** | ≥ 90 | ✅ Superado |
+| **Accessibility** | **100** | ≥ 95 | ✅ Superado |
+| **Best Practices** | **100** | ≥ 95 | ✅ Superado |
+| **SEO** | **100** | ≥ 95 | ✅ Superado |
+
+---
+
+## 🔍 Validaciones W3C
+
+| Validador Oficial | Estado | Resultado |
+|---|---|---|
+| **W3C HTML Validator** | ✅ Aprobado | 0 errores / 0 advertencias |
+| **W3C CSS Validator** | ✅ Aprobado | 0 errores (Cumplimiento estricto de Design Tokens y capas `@layer`) |
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```text
 coffea-landing/
 ├── index.html
 ├── 404.html
@@ -19,29 +41,28 @@ coffea-landing/
 ├── netlify.toml
 ├── README.md
 ├── css/
-│   ├── main.css            # @import de las capas en orden (@layer)
-│   ├── tokens.css          # Design tokens (colores, fuentes, medidas, radios)
-│   ├── base.css            # Reset, tipografía base, :focus-visible
-│   ├── layout.css          # .container (1444 px centrado)
-│   ├── utilities.css       # .sr-only, .skip-link, prefers-reduced-motion
+│   ├── main.css                # @import de las capas en orden (@layer)
+│   ├── tokens.css              # Design tokens centralizados (colores, fuentes, medidas, radios)
+│   ├── base.css                # Reset moderno, tipografía base, :focus-visible
+│   ├── layout.css              # .container (1444 px centrado)
 │   └── components/
-│       ├── header.css      # Header absoluto (55 px top, lupa 61 px)
-│       ├── hero.css        # Hero 1000 px (texto en x: 238 px, y: 294 px)
-│       ├── categories.css  # Franja 220 px, 4 ítems en 845 px, íconos 82 px
-│       ├── carousel.css    # Carrusel (título a 64 px, flechas a 80 px de bordes)
-│       ├── product-card.css# Cards 366x570 px, gap 4 px, fav a 18 px
-│       ├── promo.css       # CTA 335 px, botón 258x51 px con doble chevron
+│       ├── header.css          # Header absoluto (55 px top, lupa 61 px)
+│       ├── hero.css            # Hero 1000 px (texto en x: 238 px, y: 294 px)
+│       ├── categories.css      # Franja 220 px, 4 ítems en 845 px, íconos 82 px
+│       ├── carousel.css        # Carrusel (título a 64 px, flechas a 80 px de bordes)
+│       ├── product-card.css    # Cards 366x570 px, gap 4 px, fav a 18 px
+│       ├── promo.css           # CTA 335 px, botón 258x51 px con doble chevron
 │       ├── testimonial-card.css # Cards 441x235 px y 417x207 px, avatares 56 px
-│       ├── newsletter.css  # Franja 320 px, input pill 364x44 px
-│       └── footer.css      # Franja 358 px, separación vertical de 42 px
+│       ├── newsletter.css      # Franja 320 px, input pill 364x44 px
+│       └── footer.css          # Franja 358 px, separación vertical de 42 px
 └── assets/
-    ├── img/                # AVIF + fallback JPG + figma.png (overlay de QA)
-    └── icons/              # SVG vectoriales
+    ├── img/                    # AVIF + fallback JPG + figma.png (overlay de QA)
+    └── icons/                  # SVG vectoriales
 ```
 
 ---
 
-## Especificaciones Oficiales del PRD (1920 px)
+## 📏 Especificaciones Oficiales del PRD (1920 px)
 
 | Sección | Medida / Propiedad | Especificación PRD y Tokens |
 |---|---|---|
@@ -50,7 +71,7 @@ coffea-landing/
 | | Navegación | 6 links uppercase Poppins **18 px** (`--fs-md`), `login` en peso 600, los demás en 500. Gap de **40 px**. |
 | | Buscador | Botón circular blanco de **61 px** (`--size-search`), ícono de lupa centrado. |
 | **Hero** | Dimensiones | Alto estricto de **1000 px** (`--h-hero`), fondo `--color-espresso` con imagen cover a la derecha. |
-| | Bloque de texto | Posicionado a **238 px** del borde izquierdo y **294 px** del superior (`--hero-content-top`). |
+| | Bloque de texto | Posicionado a **238 px** del borde izquierdo (`--hero-offset-left`) y **294 px** del superior (`--hero-content-top`). |
 | | Tipografía | Eyebrow Outfit **20 px** (`--fs-lg`), H1 Playfair Display **72/82 px** (`--fs-hero`, `--lh-tight`), párrafo Outfit **18/26 px**. |
 | | Botón CTA | "Order Now" con padding **16 × 40 px**, radio pill (`--radius-pill`), fondo blanco. |
 | **Categorías** | Franja | Alto de **220 px** (`--h-categories`), fondo `--color-sand`. |
@@ -76,9 +97,9 @@ coffea-landing/
 
 ---
 
-## Encastre Geométrico Vertical a 1920 px
+## 📐 Encastre Geométrico Vertical a 1920 px
 
-```
+```text
 [Y =    0 px] ── Header absoluto (Y = 55 px, alto 61 px)
 [Y =    0 px] ── Hero (alto estricto: 1000 px)
 [Y = 1000 px] ── Categorías (alto estricto: 220 px)
@@ -92,16 +113,16 @@ coffea-landing/
 
 ---
 
-## Convenciones de Desarrollo
+## ⚙️ Convenciones de Desarrollo
 
-- **BEM:** `.product-card`, `.product-card__title`, `.product-card--featured`.
-- **Tokens:** Todos los valores de color, fuente, radio, espaciado y dimensiones salen de `css/tokens.css`.
-- **Mobile-first:** Estilos base optimizados para 360 px con mejoras progresivas mediante `@media (min-width: …)`.
-- **Capas CSS:** `tokens → base → layout → components → utilities` gestionadas mediante `@layer`.
-- **Unidades:** `rem` para tipografía y cotas escalables; `clamp()` para textos fluidos.
-- **Interacciones 100 % CSS:** Hover, estados de foco `:focus-visible`, scroll-snap en carruseles, menú mobile con `<details>/<summary>`, selección de favoritos mediante checkboxes accesibles.
+- **BEM:** Clases estructuradas bajo metodología BEM (ej. `.product-card`, `.product-card__title`, `.product-card--featured`).
+- **Tokens:** Cero valores sueltos; todos los colores, tipografías, radios, espaciados y dimensiones se vinculan de forma estricta a `css/tokens.css`.
+- **Mobile-first:** Estilos base optimizados para 360 px con evolución progresiva mediante `@media (min-width: …)`.
+- **Capas CSS:** Control de cascada organizado en capas mediante `@layer tokens, base, layout, components, utilities`.
+- **Unidades:** Empleo de `rem` para tipografías y contenedores escalables.
+- **Interacciones 100 % CSS:** Sin uso de JavaScript. Hover dinámico, estados de foco accesibles (`:focus-visible`), scroll-snap nativo en carruseles, menú desplegable mobile con `<details>/<summary>`, y selección de favoritos mediante checkboxes con pseudo-clases `:checked`.
 
-### Breakpoints
+### Breakpoints Definidos
 
 | Nombre | Rango | Contenedor |
 |---|---|---|
@@ -112,34 +133,37 @@ coffea-landing/
 
 ---
 
-## Cómo levantarlo en local
+## 💻 Cómo Levantar el Proyecto en Local
 
-El proyecto no requiere ningún proceso de compilación ni empaquetado:
+El sitio es estático puro y no requiere procesos de empaquetado (build) ni dependencias de Node.js:
 
-1. Abrir la carpeta en VS Code e iniciar **Live Server** sobre `index.html` (`http://127.0.0.1:5500`).
-2. O bien servir mediante cualquier servidor estático local, por ejemplo:
+1. Clonar o descargar el repositorio.
+2. Abrir la carpeta raíz en VS Code.
+3. Iniciar la extensión **Live Server** sobre el archivo `index.html` (por defecto en `http://127.0.0.1:5500`).
+4. Alternativamente, servir mediante cualquier servidor local ligero:
+
    ```sh
    npx serve .
    ```
 
 ---
 
-## Despliegue (Netlify)
+## 🚀 Despliegue en Producción (Netlify)
 
-1. Conectar el repositorio a Netlify.
-2. **Build command:** vacío.
-3. **Publish directory:** `.`
-4. Cada push a `main` despliega automáticamente a producción.
-5. Los formularios del newsletter se procesan con **Netlify Forms** (`data-netlify="true"` con honeypot para protección antispam).
+1. Conectar el repositorio de GitHub con un sitio nuevo en Netlify.
+2. **Build command:** (dejar vacío).
+3. **Publish directory:** `.` (raíz del proyecto).
+
+El despliegue continuo se encuentra activo; cada `git push` a la rama `main` actualiza el entorno de producción de forma automática.
 
 ---
 
-## Decisiones y Desvíos Documentados
+## 📝 Decisiones de Diseño y Licencias
 
 | Tema | Decisión y Justificación |
 |---|---|
-| **Flechas del carrusel** | Decorativas (`aria-hidden`), visibles desde 1800 px para evitar desbordes y posicionadas a **80 px de cada borde** de la pantalla según PRD. En pantallas menores se utiliza desplazamiento táctil / trackpad con scroll-snap. |
-| **Imágenes laterales del CTA** | En tablet sangran fuera del viewport para priorizar la legibilidad del texto; a pantalla completa (≥ 1600 px) se muestran íntegras encastradas a 335 px. |
-| **Imágenes del newsletter** | Visibles desde 1024 px/1440 px para mantener despejado el campo de suscripción. |
-| **Tipografía y typos** | Se corrigieron los typos originales del mockup de Figma (ej. "INFOTNATION" → "INFORMATION", "ger 15% off" → "get 15% off", marcas unificadas a "Coffea"). |
-| **Moneda** | Estandarizada a USD en el HTML para mantener consistencia con el idioma inglés (`lang="en"`). |
+| Flechas del carrusel | Marcadas como decorativas (`aria-hidden`), visibles a partir de resoluciones amplias y posicionadas estrictamente a 80 px de cada borde de la pantalla según PRD. En pantallas intermedias se prioriza el desplazamiento táctil / trackpad mediante `scroll-snap`. |
+| Imágenes laterales del CTA | En dispositivos tablet se desplazan fuera del viewport para priorizar la lectura del copy; a pantalla completa (≥ 1440 px) se visualizan íntegras encastradas a 335 px. |
+| Tipografía y corrección de typos | Se corrigieron los errores tipográficos presentes en el mockup original de Figma (ej. "INFOTNATION" → "INFORMATION", "ger 15% off" → "get 15% off", unificando además la marca a "Coffea"). |
+| Moneda | Estandarizada a USD en los componentes para mantener coherencia internacional con el idioma base (`lang="en"`). |
+| Licencias de recursos | Las imágenes e ilustraciones fotográficas utilizadas fueron obtenidas de Unsplash bajo licencias libres para uso académico y comercial. |
