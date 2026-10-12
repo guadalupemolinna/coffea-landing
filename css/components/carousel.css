@@ -32,7 +32,21 @@
 }
 .carousel__track::-webkit-scrollbar { display: none; }
 
-/* Flechas decorativas: solo si entran sin desbordar (1476 + 2 × (80 + 71) = 1778 px) */
+@media (min-width: 64rem) {
+  .carousel__track {
+    padding-block: 0;
+  }
+  #coffee.products {
+    padding-top: var(--space-56);
+    padding-bottom: var(--space-40);
+  }
+  #dessert.products {
+    padding-top: var(--space-40);
+    padding-bottom: var(--space-56);
+  }
+}
+
+/* Flechas decorativas a 80 px de cada borde (PRD) */
 .carousel__btn { display: none; }
 @media (min-width: 112.5rem) {
   .carousel__btn {
@@ -44,8 +58,14 @@
     background: url("../../assets/icons/arrow.svg") center / contain no-repeat;
     pointer-events: none;
   }
-  .carousel__btn--prev { right: calc(100% + var(--space-80)); transform: translateY(-50%); }
-  .carousel__btn--next { left: calc(100% + var(--space-80)); transform: translateY(-50%) rotate(180deg); }
+  .carousel__btn--prev {
+    left: calc((100vw - 100%) / -2 + var(--space-80));
+    transform: translateY(-50%);
+  }
+  .carousel__btn--next {
+    right: calc((100vw - 100%) / -2 + var(--space-80));
+    transform: translateY(-50%) rotate(180deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

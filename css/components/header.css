@@ -17,6 +17,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-logo);
   font-weight: 700;
+  line-height: 1;
   color: var(--color-white);
   text-transform: lowercase;
   text-decoration: none;
@@ -106,9 +107,7 @@
   .header__mobile-menu { display: none; }
   .header__nav {
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-inline-start: auto;
+    margin-inline-end: 2.75rem; /* 44 px antes de la lupa */
   }
 }

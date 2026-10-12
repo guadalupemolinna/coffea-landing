@@ -61,14 +61,15 @@
    ========================================= */
 @media (min-width: 64rem) { /* 1024px / 16 */
   .categories {
-    height: 13.75rem; /* 220px */
+    height: var(--h-categories); /* 220 px exactos según PRD */
     padding-block: 0;
     display: flex;
     align-items: center;
   }
   
   .categories__list {
-    max-width: 52.8125rem; /* 845px */
+    width: 100%;
+    max-width: var(--w-categories); /* 845 px exactos centrados */
     margin-inline: auto;
   }
 }

@@ -25,9 +25,8 @@
 .skip-link:focus { top: var(--space-16); outline-color: var(--color-white); }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition: none;
-    animation: none;
-    scroll-behavior: auto;
+  :root {
+    --duration: 0ms;
+    --duration-slow: 0ms;
   }
 }

@@ -10,16 +10,16 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Coffea | Coffee Shop">
   <meta property="og:description" content="We serve the richest coffee in the city!">
-  <!-- TODO: og:image y og:url requieren URL absoluta (agregar al tener el dominio de Netlify) -->
-  <link rel="preload" as="image" type="image/avif" href="assets/img/hero.avif" imagesrcset="assets/img/hero-960.avif 960w, assets/img/hero.avif 1920w" imagesizes="100vw" fetchpriority="high">
+  <meta property="og:url" content="https://tu-sitio.netlify.app/">
+  <meta property="og:image" content="https://tu-sitio.netlify.app/assets/img/hero.jpg"> 
+  <link rel="preload" as="image" type="image/avif" href="/assets/img/hero.avif" imagesrcset="assets/img/hero-960.avif 960w, assets/img/hero.avif 1920w" imagesizes="100vw" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;family=Reggae+One&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="header">
     <div class="header__container container">
       <a href="/" class="header__logo">coffea</a>
@@ -34,7 +34,7 @@
         </ul>
       </nav>
       <button type="button" class="header__search" aria-label="Search">
-      <img src="assets/icons/search.svg" alt="" width="61" height="61">
+      <img src="/assets/icons/search.svg" alt="" width="61" height="61">
       </button>
       <!-- Menú mobile sin JS: details/summary -->
       <details class="header__mobile-menu">
@@ -63,7 +63,7 @@
         <div class="hero__content">
           <p class="hero__eyebrow">Welcome</p>
           <h1 id="hero-title" class="hero__title">We serve the richest coffee in the city!</h1>
-          <p class="hero__text">Lorem ipsum dolor sit amet</p>
+          <p class="hero__text">Freshly roasted, expertly brewed coffee for your daily routine</p>
           <a href="#coffee" class="hero__btn">Order Now</a>
         </div>
       </div>
@@ -95,7 +95,7 @@
               <h3 class="product-card__title">Lungo coffee</h3>
               <p class="product-card__desc">Long, smooth and slow-poured.</p>
               <div class="product-card__footer">
-                <data value="200" class="product-card__price">Rs. 200</data>
+                <data value="200" class="product-card__price">USD 200</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
@@ -108,7 +108,7 @@
               <h3 class="product-card__title">Lungo Coffee</h3>
               <p class="product-card__desc">Espresso with silky steamed milk.</p>
               <div class="product-card__footer">
-                <data value="250" class="product-card__price">Rs. 250</data>
+                <data value="250" class="product-card__price">USD 250</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
@@ -121,7 +121,7 @@
               <h3 class="product-card__title">Lungo Coffee</h3>
               <p class="product-card__desc">Equal parts espresso, milk and foam.</p>
               <div class="product-card__footer">
-                <data value="280" class="product-card__price">Rs. 280</data>
+                <data value="280" class="product-card__price">USD 280</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
@@ -134,7 +134,7 @@
               <h3 class="product-card__title">Lungo Coffee</h3>
               <p class="product-card__desc">Velvety microfoam over a double shot.</p>
               <div class="product-card__footer">
-                <data value="300" class="product-card__price">Rs. 300</data>
+                <data value="300" class="product-card__price">USD 300</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
@@ -152,53 +152,53 @@
           <div class="carousel__track" role="region" aria-label="Special dessert" tabindex="0">
             <article class="product-card" id="dessert-1">
               <div class="product-card__img-wrapper">
-                <picture><source type="image/avif" srcset="assets/img/dessert-1-sm.avif 334w, assets/img/dessert-1.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-1.jpg" alt="Lungo Coffee square on a plate" width="334" height="364" srcset="assets/img/dessert-1-sm.jpg 334w, assets/img/dessert-1.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
+                <picture><source type="image/avif" srcset="assets/img/dessert-1-sm.avif 334w, assets/img/dessert-1.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-1.jpg" alt="Placeholder image for Chocolate Brownie" width="334" height="364" srcset="assets/img/dessert-1-sm.jpg 334w, assets/img/dessert-1.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
                 <input type="checkbox" id="fav-dessert-1" class="sr-only product-card__fav-input">
-                <label for="fav-dessert-1" class="product-card__fav-label"><span class="sr-only">Add Lungo Coffee to favorites</span></label>
+                <label for="fav-dessert-1" class="product-card__fav-label"><span class="sr-only">Add Chocolate Brownie to favorites</span></label>
               </div>
-              <h3 class="product-card__title">Lungo Coffee</h3>
+              <h3 class="product-card__title">Chocolate Brownie</h3>
               <p class="product-card__desc">Dense, fudgy and dark.</p>
               <div class="product-card__footer">
-                <data value="180" class="product-card__price">Rs. 180</data>
+                <data value="180" class="product-card__price">USD 180</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
             <article class="product-card" id="dessert-2">
               <div class="product-card__img-wrapper">
-                <picture><source type="image/avif" srcset="assets/img/dessert-2-sm.avif 334w, assets/img/dessert-2.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-2.jpg" alt="Slice of cheesecake with berry sauce" width="334" height="364" srcset="assets/img/dessert-2-sm.jpg 334w, assets/img/dessert-2.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
+                <picture><source type="image/avif" srcset="assets/img/dessert-2-sm.avif 334w, assets/img/dessert-2.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-2.jpg" alt="Placeholder image for Berry Cheesecake" width="334" height="364" srcset="assets/img/dessert-2-sm.jpg 334w, assets/img/dessert-2.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
                 <input type="checkbox" id="fav-dessert-2" class="sr-only product-card__fav-input">
-                <label for="fav-dessert-2" class="product-card__fav-label"><span class="sr-only">Add Lungo Coffee to favorites</span></label>
+                <label for="fav-dessert-2" class="product-card__fav-label"><span class="sr-only">Add Berry Cheesecake to favorites</span></label>
               </div>
-              <h3 class="product-card__title">Lungo Coffee</h3>
+              <h3 class="product-card__title">Berry Cheesecake</h3>
               <p class="product-card__desc">Creamy slice with berry sauce.</p>
               <div class="product-card__footer">
-                <data value="220" class="product-card__price">Rs. 220</data>
+                <data value="220" class="product-card__price">USD 220</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
             <article class="product-card" id="dessert-3">
               <div class="product-card__img-wrapper">
-                <picture><source type="image/avif" srcset="assets/img/dessert-3-sm.avif 334w, assets/img/dessert-3.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-3.jpg" alt="Lungo Coffee" width="334" height="364" srcset="assets/img/dessert-3-sm.jpg 334w, assets/img/dessert-3.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
+                <picture><source type="image/avif" srcset="assets/img/dessert-3-sm.avif 334w, assets/img/dessert-3.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-3.jpg" alt="Placeholder image for Butter Croissant" width="334" height="364" srcset="assets/img/dessert-3-sm.jpg 334w, assets/img/dessert-3.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
                 <input type="checkbox" id="fav-dessert-3" class="sr-only product-card__fav-input">
-                <label for="fav-dessert-3" class="product-card__fav-label"><span class="sr-only">Add Lungo Coffee to favorites</span></label>
+                <label for="fav-dessert-3" class="product-card__fav-label"><span class="sr-only">Add Butter Croissant to favorites</span></label>
               </div>
-              <h3 class="product-card__title">Lungo Coffee</h3>
+              <h3 class="product-card__title">Butter Croissant</h3>
               <p class="product-card__desc">Flaky and baked every morning.</p>
               <div class="product-card__footer">
-                <data value="150" class="product-card__price">Rs. 150</data>
+                <data value="150" class="product-card__price">USD 150</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
             <article class="product-card" id="dessert-4">
               <div class="product-card__img-wrapper">
-                <picture><source type="image/avif" srcset="assets/img/dessert-4-sm.avif 334w, assets/img/dessert-4.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-4.jpg" alt="Lungo Coffee" width="334" height="364" srcset="assets/img/dessert-4-sm.jpg 334w, assets/img/dessert-4.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
+                <picture><source type="image/avif" srcset="assets/img/dessert-4-sm.avif 334w, assets/img/dessert-4.avif 668w" sizes="(min-width: 64rem) 25vw, 78vw"><img src="assets/img/dessert-4.jpg" alt="Placeholder image for Tiramisu" width="334" height="364" srcset="assets/img/dessert-4-sm.jpg 334w, assets/img/dessert-4.jpg 668w" sizes="(min-width: 64rem) 25vw, 78vw" loading="lazy" decoding="async"></picture>
                 <input type="checkbox" id="fav-dessert-4" class="sr-only product-card__fav-input">
-                <label for="fav-dessert-4" class="product-card__fav-label"><span class="sr-only">Add Lungo Coffee to favorites</span></label>
+                <label for="fav-dessert-4" class="product-card__fav-label"><span class="sr-only">Add Tiramisu to favorites</span></label>
               </div>
-              <h3 class="product-card__title">Lungo Coffee</h3>
-              <p class="product-card__desc">Coffee-soaked layers and mascarpone.</p>
+              <h3 class="product-card__title">Tiramisu</h3>
+              <p class="product-card__desc">Coffee-soaked mascarpone layers.</p>
               <div class="product-card__footer">
-                <data value="240" class="product-card__price">Rs. 240</data>
+                <data value="240" class="product-card__price">USD 240</data>
                 <button type="button" class="product-card__btn">Order Now</button>
               </div>
             </article>
@@ -289,6 +289,7 @@
 
   <footer class="footer">
     <div class="footer__container container">
+      <h2 class="sr-only">Footer navigation</h2>
       <div class="footer__brand"><p class="footer__logo">Coffea</p></div>
       <nav class="footer__nav" aria-label="Privacy">
         <h3 class="footer__heading">PRIVACY</h3>

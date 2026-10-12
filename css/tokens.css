@@ -16,13 +16,13 @@
   --color-border-soft: rgba(48, 38, 28, 0.1);/* borde de testimonial-card */
   --color-text-soft: rgba(48, 38, 28, 0.7);  /* rol del cliente */
   --color-white: #ffffff;                    /* texto del hero, nav, footer */
-  --color-star: #f5b301;                     /* rating (verificar contra el SVG de estrellas 0:200) */
+  --color-star: #f5b301;        
 
-  /* Auxiliares (no vienen del Figma, necesarios para estados y legibilidad) */
-  --color-ink: #000000;                      /* título del CTA */
-  --color-error: #b3261e;                    /* :user-invalid del newsletter */
-  --color-overlay: rgba(0, 0, 0, 0.55);      /* overlay del hero para contraste AA */
-  --focus-color: var(--color-espresso);      /* se redefine a blanco en fondos oscuros */
+
+  --color-ink: #000000;                     
+  --color-error: #b3261e;                   
+  --color-overlay: rgba(0, 0, 0, 0.55);     
+  --focus-color: var(--color-espresso);     
 
   /* ---------- Tipografías (Google Fonts, display=swap) ---------- */
   --font-display: "Playfair Display", Georgia, serif;   /* 500, 600, 700 */
@@ -74,9 +74,10 @@
   --space-24: 1.5rem;
   --space-28: 1.75rem;
   --space-40: 2.5rem;
+  --space-42: 2.625rem; /* 42 px: separación vertical footer */
   --space-56: 3.5rem;
-  --space-64: 4rem;     /* título → carrusel */
-  --space-80: 5rem;     /* arrow → card */
+  --space-64: 4rem;     /* 64 px: título → carrusel */
+  --space-80: 5rem;     /* 80 px: arrow → borde / margen */
 
   /* ---------- Contenedores y layout ---------- */
   --container: 90.25rem;            /* 1444 px */
@@ -84,11 +85,19 @@
   --gutter: 1rem;                   /* base: 16 px */
   --header-top: 1.5rem;             /* mobile; 55 px en desktop */
 
+  /* ---------- Alturas de franjas (PRD oficial a 1920 px) ---------- */
+  --h-hero: 62.5rem;                /* 1000 px */
+  --h-categories: 13.75rem;         /* 220 px */
+  --h-promo: 20.9375rem;            /* 335 px */
+  --h-newsletter: 20rem;            /* 320 px */
+  --h-footer: 22.375rem;            /* 358 px */
+
   /* ---------- Tamaños de componentes ---------- */
   --size-touch: 2.75rem;            /* 44 px, área táctil mínima */
   --size-search: 2.75rem;           /* buscador: 44 px mobile, 61 px desktop */
   --size-arrow: 3.5rem;             /* flecha de carrusel: 71 px en xl */
   --size-icon-cat: 5.125rem;        /* 82 px */
+  --w-categories: 52.8125rem;       /* 845 px: 4 ítems centrados */
   --size-heart: 2.0625rem;          /* 33 px */
   --inset-heart: 1.125rem;          /* 18 px */
   --btn-pad-y: 0.625rem;            /* 10 px */
@@ -96,12 +105,21 @@
   --hero-content-top: 18.375rem;    /* 294 px: inicio del texto del hero a 1920 px */
   --hero-top-fluid: 15.3125vw;      /* 294 / 1920, escala el inicio del texto */
   --hero-top-min: 7rem;             /* 112 px, mínimo en pantallas chicas */
+  --w-card: 22.875rem;              /* 366 px */
   --h-card: 35.625rem;              /* 570 px */
-  --h-newsletter: 20rem;            /* 320 px */
+  --w-btn-cta: 16.125rem;           /* 258 px */
+  --h-btn-cta: 3.1875rem;           /* 51 px */
+  --w-testimonial: 26.0625rem;      /* 417 px */
+  --h-testimonial: 12.9375rem;      /* 207 px */
+  --w-testimonial-featured: 27.5625rem; /* 441 px */
+  --h-testimonial-featured: 14.6875rem; /* 235 px */
+  --size-avatar: 3.5rem;            /* 56 px */
   --w-input: 22.75rem;              /* 364 px */
+  --h-input: 2.75rem;               /* 44 px */
 
   /* ---------- Movimiento ---------- */
   --duration: 200ms;
+  --duration-slow: 300ms;
 }
 
 /* ---------- Breakpoints mobile-first (PRD sección 7) ---------- */

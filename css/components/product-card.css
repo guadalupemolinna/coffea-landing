@@ -6,15 +6,14 @@
 /* Base (360 px): 1,2 cards visibles, la siguiente se asoma (PRD §7) */
 .product-card {
   display: flex;
-  flex: 0 0 calc((100% - var(--space-4) * 0.2) / 1.2);
   flex-direction: column;
-  gap: var(--space-16);
   padding: var(--space-16);
+  gap: var(--space-16);
   background-color: var(--color-sand-20);
   border: var(--border-card) solid var(--color-sand);
   border-radius: var(--radius-card);
+  box-sizing: border-box;
   scroll-snap-align: start;
-  transition: box-shadow var(--duration) ease;
 }
 
 /* md (768 px): 2,5 cards visibles */
@@ -24,11 +23,14 @@
   }
 }
 
-/* lg / xl (1024 px+): 4 cards visibles → 366 px a 1920 con carrusel de 1476 px */
+/* lg / xl (1024 px+): 4 cards visibles → 366 × 570 px con carrusel de 1476 px */
 @media (min-width: 64rem) {
   .product-card {
-    flex-basis: calc((100% - var(--space-4) * 3) / 4);
-    min-height: var(--h-card, 35.625rem); /* 570 px */
+    flex: 0 0 var(--w-card);
+    width: var(--w-card);
+    height: var(--h-card);
+    min-height: var(--h-card);
+    box-sizing: border-box;
   }
 }
 

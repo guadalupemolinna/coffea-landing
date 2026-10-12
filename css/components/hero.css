@@ -13,6 +13,7 @@
   min-height: 40rem;
   padding-block: 6rem var(--space-56);
   overflow: hidden;
+  background-color: var(--color-espresso);
   color: var(--color-white);
 }
 
@@ -87,22 +88,27 @@
   .hero__btn:hover { transform: translateY(-2px); }
 }
 
+.hero > picture { display: contents; }
+
 @media (min-width: 48rem) {
-  .hero__eyebrow,
-  .hero__title,
+  .hero__eyebrow { margin-bottom: var(--space-24); }
+  .hero__title { margin-bottom: var(--space-24); }
   .hero__text { margin-bottom: var(--space-40); }
 }
 
 @media (min-width: 64rem) {
   .hero {
-    min-height: min(100vh, 62.5rem);
-    align-items: flex-start; /* el texto arranca desde arriba, no centrado */
-    /* 294 px a 1920 px de ancho, proporcional en pantallas más chicas */
-    padding-top: clamp(var(--hero-top-min), var(--hero-top-fluid), var(--hero-content-top));
+    display: block;
+    height: var(--h-hero); /* 1000 px exactos según PRD a 1920 px */
+    min-height: var(--h-hero);
+    padding-top: 14.875rem; /* 238 px: Eyebrow a 238 px, H1 a 294 px exactos */
+    padding-bottom: 0;
+    box-sizing: border-box;
   }
   .hero::after { background: linear-gradient(90deg, var(--color-overlay), transparent 75%); }
-  .hero__title,
-  .hero__text { margin-bottom: var(--space-56); }
+  .hero__eyebrow { margin-bottom: 2.25rem; } /* 36 px: Eyebrow en 238 px -> H1 en 294 px exactos */
+  .hero__title { margin-bottom: var(--space-56); } /* 56 px según PRD §5.2 R3 */
+  .hero__text { margin-bottom: var(--space-56); }  /* 56 px según PRD §5.2 R3 */
 }
 
 /* Variante sin imagen (404) */
