@@ -99,12 +99,12 @@
     box-sizing: border-box;
   }
   
+  @media (min-width: 64rem) {
   .hero__container {
-    width: 100%;
-    max-width: 100%; /* Forzamos a que ocupe todo el ancho para mandar el texto donde queremos */
-    margin-inline: 0;
-    padding-inline-start: var(--hero-offset-left); /* Los 238px exactos desde el borde absoluto de la pantalla */
+    /* sin max-width: 100%, sin margin-inline: 0, sin padding-inline-start */
+    /* hereda el contenedor base: logo y "WELCOME" quedan en la misma línea */
   }
+}
 
   .hero__content {
     position: static;

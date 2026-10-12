@@ -89,6 +89,7 @@
 
   /* ---------- Tamaños de componentes ---------- */
   --size-touch: 2.75rem;            /* 44 px, área táctil mínima */
+  --space-nav-search: 2.75rem; /* 44 px, nav → lupa */
   --size-search: 2.75rem;           /* buscador: 44 px mobile, 61 px desktop */
   --size-arrow: 3.5rem;             /* flecha de carrusel: 71 px en xl */
   --size-icon-cat: 5.125rem;        /* 82 px */
