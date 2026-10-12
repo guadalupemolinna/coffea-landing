@@ -84,6 +84,7 @@
   --h-categories: 13.75rem;         /* 220 px */
   --h-promo: 20.9375rem;            /* 335 px */
   --h-newsletter: 20rem;            /* 320 px */
+  --hero-offset-left: 14.875rem; /* 238 px exactos según PRD */
   --h-footer: 22.375rem;            /* 358 px */
 
   /* ---------- Tamaños de componentes ---------- */

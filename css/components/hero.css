@@ -91,28 +91,24 @@
 }
 @media (min-width: 64rem) {
   .hero {
-    position: relative;
     display: block;
     height: var(--h-hero); /* 1000 px exactos según PRD a 1920 px */
     min-height: var(--h-hero);
-    padding-top: 0;
+    padding-top: var(--hero-offset-left); 
     padding-bottom: 0;
     box-sizing: border-box;
   }
   
-  /* Dejamos el contenedor fluido normal para no romper nada más */
+  /* Alineamos el contenedor respetando la grilla y usando la variable oficial */
   .hero__container {
     width: 100%;
     max-width: calc(var(--container) + 2 * var(--gutter));
     margin-inline: auto;
-    padding-inline: var(--gutter);
+    padding-inline-start: var(--hero-offset-left); /* Cero valores sueltos, todo por token */
   }
 
-  /* Posicionamos el bloque de texto de forma absoluta exactamente a 238px del borde izquierdo y 294px del superior */
   .hero__content {
-    position: absolute;
-    top: 18.375rem; /* 294 px exactos */
-    left: 14.875rem; /* 238 px exactos desde el borde izquierdo */
+    position: static;
     max-width: 34.8125rem;
     margin: 0;
   }
