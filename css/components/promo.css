@@ -47,36 +47,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-4); 
-  width: var(--w-btn-cta);   /* 258 px */
-  height: var(--h-btn-cta);  /* 51 px */
+  flex-wrap: nowrap;          /* Impide el salto de línea interno */
+  gap: var(--space-4);
+  width: var(--w-btn-cta);    /* 258 px */
+  height: var(--h-btn-cta);   /* 51 px */
   box-sizing: border-box;
-  padding: 0 var(--space-24);
+  padding: 0 var(--space-16); /* Padding optimizado */
   border-radius: var(--radius-pill);
   background: var(--color-espresso);
-  font-family: var(--font-body);
-  font-size: var(--fs-base);
-  font-weight: 500;
+  font-size: 0.9375rem;       /* Tamaño seguro para evitar desbordes */
   color: var(--color-bg);
   text-decoration: none;
-  transition: transform var(--duration) ease;
 }
 
 .promo__chevrons {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+  flex-shrink: 0;             /* Evita que las flechas se compriman */
 }
 
-/* Acercamos la segunda flecha a la primera para formar el ">>" compacto */
 .promo__chevrons img:nth-child(2) {
-  margin-left: -10px; 
-}
-
-.promo__chevrons img {
-  width: 1.25rem;  /* 20px */
-  height: 1.25rem; /* 20px */
-  display: block;
+  margin-left: -8px; 
 }
 
 @media (hover: hover) {
